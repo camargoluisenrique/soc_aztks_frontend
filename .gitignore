@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+dev-dist/
+dist-ssr/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.*.local
+*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# SOC_AZTKS local backups
+src/backup/
+backup/
+backups/
+backups_versiones_zip/
+_historico_versiones/
+
+*.backup.*
+*.backup_*
+*.estable_*
+*.malo_*
+
+App.backup_*
+App.estable_*
+App_SOC_AZTKS_*.jsx
+
+package.backup*.json
+package-lock.backup*.json
+vite.config.backup*.js
+index.backup*.html
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
