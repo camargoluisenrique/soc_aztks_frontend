@@ -34,6 +34,8 @@ _historico_versiones/
 *.backup_*
 *.estable_*
 *.malo_*
+*.estado_aprobado_*
+*estado_aprobado*
 
 App.backup_*
 App.estable_*
@@ -44,11 +46,16 @@ package-lock.backup*.json
 vite.config.backup*.js
 index.backup*.html
 
+# Local temporary files
+*.tmp
+*.bak
+
 # Editor / OS
 .vscode/*
 !.vscode/extensions.json
 .idea/
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
