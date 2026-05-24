@@ -1,16 +1,108 @@
-# React + Vite
+# SOC_AZTKS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Sistema de Órdenes de Compra_AZTKS**
 
-Currently, two official plugins are available:
+SOC_AZTKS es una aplicación web tipo PWA desarrollada para gestionar órdenes deportivas, pedidos a proveedor, recepción logística, inventario, salidas internas, folios y control operativo del club AZTKS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+El sistema está diseñado para funcionar como una herramienta privada de operación logística, con enfoque en simplicidad, rapidez y uso desde escritorio o dispositivos móviles.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Estado del proyecto
 
-## Expanding the ESLint configuration
+Proyecto funcional desplegado como PWA.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Incluye:
+
+- Captura de órdenes deportivas.
+- Generación de folios reales.
+- Separación entre orden para proveedor y salida de inventario.
+- Monitor logístico.
+- Inventario inteligente.
+- Recepción parcial de pedidos.
+- Registro de movimientos de inventario.
+- Administración de accesos.
+- Exportación de documentos.
+- Instalación como aplicación web progresiva.
+
+---
+
+## Tecnologías principales
+
+- React
+- Vite
+- Supabase
+- Tailwind CSS
+- Vite PWA
+- JavaScript
+- HTML / CSS
+
+---
+
+## Funcionalidades principales
+
+### Órdenes
+
+El sistema permite capturar órdenes para proveedor o pedidos personalizados, generando un expediente operativo con folio institucional.
+
+### Folios
+
+La aplicación utiliza folios reales para órdenes y documentos logísticos.  
+El folio se consolida al guardar la orden, evitando que la vista previa utilice folios temporales como definitivos.
+
+### Monitor logístico
+
+Permite consultar órdenes generadas, revisar artículos, validar estatus y descargar documentos relacionados.
+
+### Inventario
+
+El módulo de inventario permite consultar existencias actuales, revisar productos en mínimo, registrar salidas internas y mantener control del Kárdex.
+
+### Recepción logística
+
+La recepción de pedidos fue diseñada para ser sencilla:
+
+- Si llegó todo, se selecciona todo y se confirma recibido.
+- Si llegó parcialmente, se selecciona únicamente lo recibido.
+- Lo recibido entra automáticamente al inventario.
+- Lo pendiente permanece en la orden para futuras recepciones.
+- Las observaciones son opcionales y solo se usan cuando existe incidencia.
+
+### Administración de accesos
+
+Permite gestionar usuarios, roles, permisos, PIN y accesos internos.
+
+### PWA
+
+El proyecto está configurado como Progressive Web App:
+
+- Manifest configurado.
+- Service Worker activo.
+- Iconos institucionales.
+- Instalación en escritorio y dispositivos compatibles.
+- Modo standalone.
+
+---
+
+## Estructura general
+
+```txt
+frontend/
+├─ public/
+│  ├─ icons/
+│  └─ screenshots/
+├─ src/
+│  ├─ assets/
+│  ├─ components/
+│  ├─ context/
+│  ├─ pages/
+│  ├─ services/
+│  ├─ utils/
+│  ├─ AdminDashboard.jsx
+│  ├─ App.jsx
+│  ├─ index.css
+│  └─ main.jsx
+├─ index.html
+├─ package.json
+├─ vite.config.js
+└─ README.md
