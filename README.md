@@ -4,7 +4,7 @@
 
 SOC_AZTKS es una aplicación web tipo PWA desarrollada para gestionar órdenes deportivas, pedidos a proveedor, recepción logística, inventario, salidas internas, folios y control operativo del club AZTKS.
 
-El sistema está diseñado para funcionar como una herramienta privada de operación logística, con enfoque en simplicidad, rapidez y uso desde escritorio o dispositivos móviles.
+El sistema está diseñado como una herramienta privada de operación logística, con enfoque en simplicidad, rapidez y uso desde escritorio o dispositivos móviles.
 
 ---
 
@@ -47,7 +47,8 @@ El sistema permite capturar órdenes para proveedor o pedidos personalizados, ge
 
 ### Folios
 
-La aplicación utiliza folios reales para órdenes y documentos logísticos.  
+La aplicación utiliza folios reales para órdenes y documentos logísticos.
+
 El folio se consolida al guardar la orden, evitando que la vista previa utilice folios temporales como definitivos.
 
 ### Monitor logístico
@@ -106,3 +107,154 @@ frontend/
 ├─ package.json
 ├─ vite.config.js
 └─ README.md
+```
+
+---
+
+## Instalación local
+
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/camargoluisenrique/soc_aztks_frontend.git
+cd soc_aztks_frontend
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Crear el archivo de variables de entorno:
+
+```bash
+.env
+```
+
+Agregar las variables necesarias:
+
+```env
+VITE_SUPABASE_URL=URL_DE_SUPABASE
+VITE_SUPABASE_ANON_KEY=ANON_KEY_DE_SUPABASE
+```
+
+Ejecutar en modo desarrollo:
+
+```bash
+npm run dev
+```
+
+Generar versión de producción:
+
+```bash
+npm run build
+```
+
+Previsualizar producción local:
+
+```bash
+npm run preview
+```
+
+---
+
+## Variables de entorno
+
+El proyecto requiere conexión a Supabase.
+
+Las variables deben configurarse localmente en `.env` y en producción dentro del proveedor de despliegue.
+
+```env
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+```
+
+Por seguridad, el archivo `.env` no debe subirse al repositorio.
+
+---
+
+## Despliegue
+
+El proyecto puede desplegarse en Vercel.
+
+Configuración recomendada:
+
+```txt
+Framework Preset: Vite
+Build Command: npm run build
+Output Directory: dist
+Install Command: npm install
+```
+
+Variables requeridas en Vercel:
+
+```txt
+VITE_SUPABASE_URL
+VITE_SUPABASE_ANON_KEY
+```
+
+---
+
+## PWA
+
+La aplicación incluye configuración PWA mediante `vite-plugin-pwa`.
+
+Para validar la instalación:
+
+1. Ejecutar `npm run build`.
+2. Ejecutar `npm run preview`.
+3. Abrir la aplicación en Chrome.
+4. Revisar DevTools > Application > Manifest.
+5. Revisar DevTools > Application > Service Workers.
+6. Probar instalación desde el navegador.
+
+---
+
+## Recomendaciones de operación
+
+- Mantener los respaldos fuera del repositorio.
+- No subir archivos `.env`.
+- No subir carpetas `dist`, `dev-dist` o `node_modules`.
+- Confirmar cada cambio funcional con `npm run build`.
+- Subir cambios a GitHub antes de desplegar producción.
+
+---
+
+## Flujo recomendado de cambios
+
+```bash
+git status
+git add .
+git commit -m "descripcion del cambio"
+git push
+```
+
+Vercel detectará los cambios del repositorio y ejecutará un nuevo despliegue automático.
+
+---
+
+## Seguridad
+
+Este repositorio no debe contener:
+
+- Variables de entorno reales.
+- Respaldos locales.
+- Archivos temporales.
+- Builds generados.
+- Copias históricas de desarrollo.
+- Credenciales privadas.
+
+---
+
+## Autor
+
+**Luis Enrique Camargo Rangel**
+
+GitHub: [camargoluisenrique](https://github.com/camargoluisenrique)
+
+---
+
+## Licencia
+
+Proyecto privado de uso operativo para SOC_AZTKS.
